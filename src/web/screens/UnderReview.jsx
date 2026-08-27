@@ -9,7 +9,7 @@ export default function UnderReview({ nav }) {
       <Split>
         <div>
           <div className="flex items-center gap-4">
-            <Mark tone="good" className="w-20 h-20 mx-0 mb-0" />
+            <Mark tone="good" className="w-20 h-20 !mx-0 !mb-0" />
             <div>
               <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Application submitted</h1>
               <p className="text-[15px] text-ink-2 mt-1.5">
@@ -35,20 +35,16 @@ export default function UnderReview({ nav }) {
         </div>
 
         <Rail>
-          <div className="space-y-[18px]">
-            <Card tint className="p-6">
-              <div className="t2">What happens next</div>
-              <div className="mt-3">
-                <Steps items={[
-                  'Companies review your resume',
-                  'Get shortlisted? Pay a refundable ₹999 to confirm your seat',
-                  'Attend the drive and get your ₹999 back',
-                ]} />
-              </div>
-            </Card>
-            <Btn variant="ghost" block onClick={() => nav.go('shortlisted')}>Simulate: a company shortlists you →</Btn>
-            <Btn variant="ghost" block onClick={() => nav.go('notselected')}>Simulate: nobody shortlists you →</Btn>
-          </div>
+          <Card tint className="p-6">
+            <div className="t2">What happens next</div>
+            <div className="mt-3">
+              <Steps items={[
+                'Companies review your resume',
+                'Get shortlisted? Pay a refundable ₹999 to confirm your seat',
+                'Attend the drive and get your ₹999 back',
+              ]} />
+            </div>
+          </Card>
         </Rail>
       </Split>
     </Shell>

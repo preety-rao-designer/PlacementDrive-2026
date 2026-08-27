@@ -81,6 +81,22 @@ export default function WebApp() {
             Reset
           </button>
         </div>
+        {p.screen === 'review' && (
+          <div className="flex gap-2 items-center">
+            <button
+              onClick={() => p.go('shortlisted')}
+              className="font-sans text-[13px] font-semibold px-3.5 py-2.5 rounded-[10px] border border-dashed border-line-2 bg-white shadow-s1 cursor-pointer text-ink-2"
+            >
+              Simulate: shortlisted →
+            </button>
+            <button
+              onClick={() => p.go('notselected')}
+              className="font-sans text-[13px] font-semibold px-3.5 py-2.5 rounded-[10px] border border-dashed border-line-2 bg-white shadow-s1 cursor-pointer text-ink-2"
+            >
+              Simulate: not selected →
+            </button>
+          </div>
+        )}
         <a
           href="https://www.masaischool.com/"
           target="_blank"
