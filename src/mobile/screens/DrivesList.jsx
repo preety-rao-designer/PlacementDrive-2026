@@ -32,7 +32,7 @@ function DriveCard({ drive, logos, primary, onView }) {
 export default function DrivesList({ nav }) {
   return (
     <div className="px-5 pt-1 pb-8">
-      <div className="d1">Upcoming<br />drives</div>
+      <div className="d1">Upcoming drives</div>
       <p className="b1 mt-2.5">Explore the companies visiting for placements.</p>
 
       <div className="mt-6 space-y-4">

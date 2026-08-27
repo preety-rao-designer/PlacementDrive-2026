@@ -1,5 +1,5 @@
 import { Btn, Card, DateChip, Kv } from '../../components/ui.jsx'
-import { QrCode } from '../../components/Icons.jsx'
+import { QrCode, Check } from '../../components/Icons.jsx'
 import { COMPANIES, DRIVE, LEARNER } from '../../data/companies.js'
 
 /** Ticket-style pass. Notches are drawn with the tinted band behind showing through. */
@@ -53,36 +53,36 @@ export default function Confirmed({ nav }) {
     : 'Zeta'
 
   return (
-    <div className="pt-2 pb-8">
-      <div className="text-center mb-[18px] px-5">
-        <h1 className="d2">Seat confirmed</h1>
-        <p className="b1 mt-2">Show this at the entry gate</p>
-      </div>
-
-      <div className="bg-surface-2 px-5 py-5">
-        <Ticket meeting={meeting} />
-      </div>
-
-      <div className="px-5 mt-5 space-y-4">
-        <div className="flex gap-2.5">
-          <Btn variant="sec" size="sm" className="flex-1">Add to calendar</Btn>
-          <Btn variant="sec" size="sm" className="flex-1">Directions</Btn>
+    <div className="relative min-h-full">
+      <div className="pt-2 pb-32">
+        <div className="text-center mb-[18px] px-5">
+          <h1 className="d2">Seat confirmed</h1>
+          <p className="b1 mt-2">Show this at the entry gate</p>
         </div>
 
-        <Card tint>
-          <div className="flex items-start gap-2.5">
-            <span className="text-good flex-none mt-px">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            </span>
-            <div>
-              <div className="t3">₹999 seat deposit</div>
-              <div className="b2 mt-[3px]">Refunded automatically once the drive ends.</div>
-            </div>
-          </div>
-        </Card>
+        <div className="bg-surface-2 px-5 py-5">
+          <Ticket meeting={meeting} />
+        </div>
 
+        <div className="px-5 mt-5 space-y-4">
+          <div className="flex gap-2.5">
+            <Btn variant="sec" size="sm" className="flex-1">Add to calendar</Btn>
+            <Btn variant="sec" size="sm" className="flex-1">Directions</Btn>
+          </div>
+
+          <Card tint>
+            <div className="flex items-start gap-2.5">
+              <span className="text-good flex-none mt-px"><Check size={18} sw={2.4} /></span>
+              <div>
+                <div className="t3">₹999 seat deposit</div>
+                <div className="b2 mt-[3px]">Refunded automatically once the drive ends.</div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+
+      <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%] space-y-2.5">
         <Btn variant="sec" block onClick={() => nav.go('opps')}>View my opportunities</Btn>
         <Btn variant="ghost" block onClick={() => nav.go('list')}>Back to drives</Btn>
       </div>

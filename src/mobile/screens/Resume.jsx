@@ -39,7 +39,7 @@ export default function Resume({ nav }) {
         )}
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
+      <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
         <Btn block disabled={!nav.hasResume} onClick={() => nav.go('pick')}>Save and continue</Btn>
       </div>
     </div>

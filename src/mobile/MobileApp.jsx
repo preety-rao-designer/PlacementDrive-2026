@@ -86,6 +86,23 @@ export default function MobileApp() {
         </div>
       </div>
 
+      {p.screen === 'review' && (
+        <div className="w-[392px] mb-8 flex gap-2">
+          <button
+            onClick={() => p.go('shortlisted')}
+            className="flex-1 font-sans text-[12.5px] font-semibold px-3.5 py-2.5 rounded-[10px] border border-dashed border-line-2 bg-white shadow-s1 cursor-pointer text-ink-2"
+          >
+            Simulate: shortlisted →
+          </button>
+          <button
+            onClick={() => p.go('notselected')}
+            className="flex-1 font-sans text-[12.5px] font-semibold px-3.5 py-2.5 rounded-[10px] border border-dashed border-line-2 bg-white shadow-s1 cursor-pointer text-ink-2"
+          >
+            Simulate: not selected →
+          </button>
+        </div>
+      )}
+
       {/* device */}
       <div className={cx('relative w-[392px] h-[812px] rounded-[44px] overflow-hidden flex flex-col shadow-device', meta.site ? 'bg-masai-black' : 'bg-surface')}>
         <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[110px] h-[30px] bg-[#14141C] rounded-full z-40" />
