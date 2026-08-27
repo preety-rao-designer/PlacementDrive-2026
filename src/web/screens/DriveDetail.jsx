@@ -47,7 +47,6 @@ export default function DriveDetail({ nav }) {
             <Kv k="Application closes" v={DRIVE.closes} />
             <div className="h-px bg-line my-4" />
             <Btn block onClick={() => nav.go('signin')}>Apply now</Btn>
-            <p className="cap text-center mt-3">Free — you only pay if a company shortlists you</p>
           </Card>
         </Rail>
       </Split>
