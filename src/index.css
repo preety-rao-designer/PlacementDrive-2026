@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   DESIGN TOKENS — swap this block for MDS and everything reflows.
+   Tailwind maps each of these in tailwind.config.js.
+   ------------------------------------------------------------------ */
+:root {
+  --ink: #0B0B12;
+  --ink-2: #575767;
+  --ink-3: #8B8B9C;
+
+  --line: #EAEAF0;
+  --line-2: #DCDCE6;
+
+  --surface: #FFFFFF;
+  --surface-2: #F6F6FA;
+  --surface-3: #F0F0F6;
+
+  --brand: #2E2AE0;
+  --brand-2: #5B4BFF;
+  --brand-tint: #EDECFF;
+  --brand-line: #D6D3FF;
+
+  --good: #0B8A5E;
+  --good-tint: #E2F6EE;
+  --good-line: #BFE7D6;
+
+  --warn: #9A6100;
+  --warn-tint: #FFF3DC;
+
+  --stop: #B02A2A;
+  --stop-tint: #FDECEC;
+
+  --masai-red: #E23C3C;
+  --masai-black: #08080A;
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply font-sans text-ink; }
+  /* hide scrollbars inside the device frame without losing scroll */
+  .no-bar { scrollbar-width: none; }
+  .no-bar::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  /* type scale — used across both prototypes */
+  .d1 { @apply text-[30px] font-extrabold tracking-[-.035em] leading-[1.1]; }
+  .d2 { @apply text-2xl font-bold tracking-[-.03em] leading-[1.18]; }
+  .t1 { @apply text-[18px] font-bold tracking-[-.02em]; }
+  .t2 { @apply text-[15px] font-bold tracking-[-.015em]; }
+  .t3 { @apply text-sm font-semibold tracking-[-.01em]; }
+  .b1 { @apply text-sm text-ink-2; }
+  .b2 { @apply text-[13px] text-ink-2; }
+  .cap { @apply text-[11.5px] font-semibold text-ink-3; }
+}
