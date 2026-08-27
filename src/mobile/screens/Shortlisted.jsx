@@ -34,12 +34,12 @@ export default function Shortlisted({ nav }) {
       </Card>
 
       <div className="rounded-lg p-[22px] bg-[linear-gradient(165deg,#FFFFFF,#F7F7FC)] border border-line shadow-s2">
-        <div className="cap">Seat deposit</div>
+        <div className="cap">Refundable seat deposit</div>
         <div className="text-[44px] font-extrabold tracking-[-.045em] leading-none tabular-nums mt-1.5">₹999</div>
-        <div className="t3 mt-1.5 text-ink-2">for the whole day, not per company</div>
+        <div className="t3 mt-1.5 text-ink-2">Blocks your seat for the whole day — not charged per company</div>
         <div className="h-px bg-line my-4" />
-        <RefundLine>Refunded within 24 hours of scanning in</RefundLine>
-        <RefundLine>Later shortlists cost nothing extra</RefundLine>
+        <RefundLine>Attend the drive — your ₹999 is refunded automatically once it ends</RefundLine>
+        <RefundLine>No extra charge for more shortlists that day</RefundLine>
       </div>
 
       <div className="space-y-2.5">

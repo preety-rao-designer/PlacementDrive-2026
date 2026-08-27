@@ -68,11 +68,11 @@ export default function Cancelled({ nav }) {
             <DateChip day={NEXT_DRIVE.day} month={NEXT_DRIVE.month} />
             <div className="flex-1">
               <div className="t1">{NEXT_DRIVE.city}</div>
-              <div className="b2 mt-[3px]">{NEXT_DRIVE.companies} companies · closes {NEXT_DRIVE.closes}</div>
+              <div className="b2 mt-[3px]">{NEXT_DRIVE.companies} companies · Application closes {NEXT_DRIVE.closes}</div>
             </div>
           </div>
           <div className="px-[18px] py-3 bg-surface-2 border-t border-line flex items-center justify-between gap-3">
-            <span className="cap">Interest is open</span>
+            <span className="cap">Application is open</span>
             <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View drive</Btn>
           </div>
         </div>

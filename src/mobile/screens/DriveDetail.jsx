@@ -6,13 +6,13 @@ export default function DriveDetail({ nav }) {
   return (
     <div className="relative min-h-full">
       <div className="px-5 pt-1 pb-24">
-        <Pill tone="brand" dot>Interest closes {DRIVE.closes}</Pill>
+        <Pill tone="brand" dot>Application closes {DRIVE.closes}</Pill>
         <h1 className="d1 mt-3">Bengaluru<br />drive</h1>
         <p className="b1 mt-2.5">{DRIVE.date}, {DRIVE.time} · {DRIVE.venue}</p>
 
         <div className="flex items-center justify-between mt-6 mb-3">
           <div className="t2">{DRIVE.companies} companies attending</div>
-          <span className="cap">Tap for full JD</span>
+          <span className="cap">Tap for full details</span>
         </div>
 
         <Card flush>
@@ -39,7 +39,7 @@ export default function DriveDetail({ nav }) {
       </div>
 
       <div className="absolute inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
-        <Btn block onClick={() => nav.go('signin')}>Mark your interest</Btn>
+        <Btn block onClick={() => nav.go('signin')}>Apply now</Btn>
       </div>
     </div>
   )

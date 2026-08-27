@@ -71,7 +71,7 @@ export default function Home({ nav }) {
               24 Aug · Bengaluru · 8 companies hiring
             </h2>
             <p className="text-[15px] text-[#B9B9C6] mt-2.5 max-w-[520px]">
-              One day, one venue, eight companies interviewing on campus. Open to enrolled Masai learners.
+              Meet 8 companies in a single day, on campus. Open to all enrolled Masai learners.
             </p>
             <div className="flex items-center mt-[22px]">
               {COMPANY_LIST.map((c) => (

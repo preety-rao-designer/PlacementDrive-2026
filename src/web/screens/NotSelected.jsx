@@ -1,4 +1,4 @@
-import { Btn, Card, Logo, Pill, DateChip } from '../../components/ui.jsx'
+import { Btn, Card, Logo, Pill } from '../../components/ui.jsx'
 import { TrendUp } from '../../components/Icons.jsx'
 import { Shell, Split, Rail } from '../layout.jsx'
 import { COMPANIES, NEXT_DRIVE, PREP } from '../../data/companies.js'
@@ -51,17 +51,10 @@ export default function NotSelected({ nav }) {
         </div>
 
         <Rail>
-          <Card className="p-6">
-            <div className="t2">Next drive</div>
-            <div className="h-px bg-line my-4" />
-            <div className="flex items-center gap-4">
-              <DateChip day={NEXT_DRIVE.day} month={NEXT_DRIVE.month} className="w-[62px] h-[66px] rounded-2xl" />
-              <div className="flex-1">
-                <div className="t2">{NEXT_DRIVE.city}</div>
-                <div className="b2 mt-0.5">{NEXT_DRIVE.companies} companies · closes {NEXT_DRIVE.closes}</div>
-              </div>
-            </div>
-            <Btn block className="mt-5" onClick={() => nav.go('drive')}>View drive</Btn>
+          <Card tint className="p-6">
+            <div className="t2">Build for the next one</div>
+            <p className="text-[15px] text-ink-2 mt-2">A learning path covering system design, SQL, and project depth.</p>
+            <Btn block className="mt-5">Explore roadmap</Btn>
           </Card>
         </Rail>
       </Split>

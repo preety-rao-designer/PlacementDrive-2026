@@ -10,7 +10,7 @@ export default function CompanyPulled({ nav }) {
       <Split>
         <div>
           <Notice tone="warn" title="Zeta has pulled out" icon={<Alert size={21} />}>
-            Razorpay is still interviewing. Your seat and your ₹999 stay put.
+            Razorpay is still interviewing you. Your seat and your ₹999 stay as they are.
           </Notice>
 
           <Card flush className="mt-7">
@@ -37,7 +37,7 @@ export default function CompanyPulled({ nav }) {
           <Card className="p-6">
             <div className="t2">Your day just got shorter</div>
             <p className="text-[15px] text-ink-2 mt-2.5">
-              Withdraw if you'd rather not attend — full refund, since this wasn't your call.
+              Since Zeta dropped out, if you'd rather skip it, you can withdraw for a full refund.
             </p>
             <div className="h-px bg-line my-5" />
             <Btn variant="sec" block>Withdraw and get ₹999 back</Btn>

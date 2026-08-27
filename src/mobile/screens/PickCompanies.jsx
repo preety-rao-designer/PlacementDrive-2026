@@ -42,7 +42,7 @@ export default function PickCompanies({ nav }) {
 
       <div className="absolute inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
         <Btn block disabled={!count} onClick={() => nav.go('review')}>
-          {count ? `Submit interest · ${count} selected` : 'Submit interest'}
+          {count ? `Apply to ${count} companies` : 'Apply to companies'}
         </Btn>
       </div>
     </div>

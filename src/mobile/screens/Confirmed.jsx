@@ -77,8 +77,8 @@ export default function Confirmed({ nav }) {
               </svg>
             </span>
             <div>
-              <div className="t3">₹999 blocked</div>
-              <div className="b2 mt-[3px]">Back within 24 hours of scanning in. Free to withdraw until 21 Aug.</div>
+              <div className="t3">₹999 seat deposit</div>
+              <div className="b2 mt-[3px]">Refunded automatically once the drive ends.</div>
             </div>
           </div>
         </Card>

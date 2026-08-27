@@ -16,7 +16,7 @@ export default function Waitlist({ nav }) {
             Drives aren't open to you yet
           </h1>
           <p className="text-[15px] text-ink-2 mt-3 max-w-[520px]">
-            Companies here interview enrolled learners only. Leave your email and we'll let you know when drives open to everyone.
+            These drives are only for enrolled learners right now. Share your email and we'll notify you when that changes.
           </p>
 
           <Card className="p-6 mt-7 max-w-[520px]">
@@ -51,9 +51,9 @@ export default function Waitlist({ nav }) {
 
         <Rail>
           <Card tint className="p-6">
-            <div className="t2">You can still look around</div>
-            <p className="text-[15px] text-ink-2 mt-2">Every drive and company is public. No account needed to browse.</p>
-            <Btn variant="sec" block className="mt-5" onClick={() => nav.go('list')}>Browse drives</Btn>
+            <div className="t2">Explore our programmes</div>
+            <p className="text-[15px] text-ink-2 mt-2">See the programmes that lead to drives like this one. No account needed.</p>
+            <Btn variant="sec" block className="mt-5">View our programmes</Btn>
           </Card>
         </Rail>
       </Split>

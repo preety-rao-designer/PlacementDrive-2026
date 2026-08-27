@@ -8,8 +8,8 @@ export default function UnderReview({ nav }) {
       <div>
         <Mark tone="good" />
         <div className="text-center">
-          <h1 className="d2">Interest submitted</h1>
-          <p className="b1 mt-2.5">Companies decide by <b className="text-ink">{DRIVE.closes}</b></p>
+          <h1 className="d2">Application submitted</h1>
+          <p className="b1 mt-2.5">Companies will respond by <b className="text-ink">{DRIVE.closes}</b></p>
         </div>
       </div>
 
@@ -35,8 +35,8 @@ export default function UnderReview({ nav }) {
         <div className="t3 mb-1">What happens next</div>
         <Steps items={[
           'Companies review your resume',
-          'Shortlisted by anyone? Pay ₹999 once',
-          'Attend the drive, get it back',
+          'Get shortlisted? Pay a refundable ₹999 to confirm your seat',
+          'Attend the drive and get your ₹999 back',
         ]} />
       </Card>
 

@@ -9,13 +9,13 @@ export default function DriveDetail({ nav }) {
       <Crumb onClick={() => nav.go('list')}>All drives</Crumb>
       <Split>
         <div>
-          <Pill tone="brand" dot>Interest closes {DRIVE.closes}</Pill>
+          <Pill tone="brand" dot>Application closes {DRIVE.closes}</Pill>
           <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">Bengaluru drive</h1>
           <p className="text-[15px] text-ink-2 mt-3">{DRIVE.dateLong} · {DRIVE.venue}</p>
 
           <div className="flex items-center justify-between mt-7 mb-4">
             <div className="t1">{DRIVE.companies} companies attending</div>
-            <span className="cap">Click a company for the full JD</span>
+            <span className="cap">Click a company for full details</span>
           </div>
 
           <Card flush>
@@ -44,9 +44,9 @@ export default function DriveDetail({ nav }) {
             <Kv k="Reporting" v={DRIVE.time} />
             <Kv k="Venue" v={DRIVE.venueShort} />
             <Kv k="Companies" v={DRIVE.companies} />
-            <Kv k="Interest closes" v={DRIVE.closes} />
+            <Kv k="Application closes" v={DRIVE.closes} />
             <div className="h-px bg-line my-4" />
-            <Btn block onClick={() => nav.go('signin')}>Mark your interest</Btn>
+            <Btn block onClick={() => nav.go('signin')}>Apply now</Btn>
             <p className="cap text-center mt-3">Free — you only pay if a company shortlists you</p>
           </Card>
         </Rail>

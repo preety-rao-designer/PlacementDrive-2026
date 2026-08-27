@@ -57,7 +57,7 @@ export function Modal({ data, onClose, picked, onToggle, onInterest }) {
                   {selected ? 'Remove from selection' : 'Add to my selection'}
                 </Btn>
               ) : (
-                <Btn onClick={onInterest}>Show interest</Btn>
+                <Btn onClick={onInterest}>Apply now</Btn>
               )}
             </div>
           </>

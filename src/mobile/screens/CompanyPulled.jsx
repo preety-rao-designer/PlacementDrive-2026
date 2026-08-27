@@ -8,7 +8,7 @@ export default function CompanyPulled({ nav }) {
     <div className="pt-2 pb-8">
       <div className="px-5">
         <Notice tone="warn" title="Zeta has pulled out" icon={<Alert size={19} />}>
-          Razorpay is still interviewing. Your seat and your ₹999 stay put.
+          Razorpay is still interviewing you. Your seat and your ₹999 stay as they are.
         </Notice>
       </div>
 
@@ -36,7 +36,7 @@ export default function CompanyPulled({ nav }) {
       <div className="px-5 mt-5 space-y-4">
         <Card tint>
           <p className="b2">
-            Your day just got shorter. Withdraw if you'd rather not attend — full refund, since this wasn't your call.
+            Since Zeta dropped out, your day is shorter now. If you'd rather skip it, you can withdraw for a full refund.
           </p>
         </Card>
         <Btn variant="sec" block>Withdraw and get ₹999 back</Btn>

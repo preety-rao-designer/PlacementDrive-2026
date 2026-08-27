@@ -50,8 +50,8 @@ export default function Confirmed({ nav }) {
           footer={
             <div className="flex items-center justify-between flex-wrap gap-3.5">
               <div>
-                <div className="text-[14.5px] font-bold tracking-[-.012em]">₹999 blocked</div>
-                <div className="text-[13.5px] text-ink-2 mt-0.5">Back within 24 hours of scanning in</div>
+                <div className="text-[14.5px] font-bold tracking-[-.012em]">₹999 seat deposit</div>
+                <div className="text-[13.5px] text-ink-2 mt-0.5">Refunded automatically once the drive ends.</div>
               </div>
               <div className="flex gap-2.5">
                 <Btn size="sm" variant="sec">Add to calendar</Btn>

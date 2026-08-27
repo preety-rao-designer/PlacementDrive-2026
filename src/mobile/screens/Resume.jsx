@@ -8,7 +8,7 @@ export default function Resume({ nav }) {
       <div className="px-5 pt-3 pb-24 space-y-6">
         <div>
           <h1 className="d2">Add your resume</h1>
-          <p className="b1 mt-2.5">Companies use this to decide who they shortlist. One resume covers all of them.</p>
+          <p className="b1 mt-2.5">This one resume goes to every company you apply to.</p>
         </div>
 
         {nav.hasResume ? (

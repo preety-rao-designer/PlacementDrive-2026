@@ -49,7 +49,7 @@ export function PayFlow({ open, onDone, fixed, amount = '₹999' }) {
             <div className="text-[46px] font-extrabold tracking-[-.045em] tabular-nums mt-1.5">{amount}</div>
           </div>
           <div className="opacity-0 animate-rise text-[13px] text-[#CFCBFF] mt-4 max-w-[260px]">
-            Seat held for the Bengaluru drive on 24 August
+            Seat confirmed for 24 Aug · refund after the drive
           </div>
           <div className="opacity-0 animate-rise absolute bottom-11 text-[11.5px] text-[#B9B4FF]">
             UPI ref · 4820 9917 3364

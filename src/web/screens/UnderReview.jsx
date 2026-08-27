@@ -11,9 +11,9 @@ export default function UnderReview({ nav }) {
           <div className="flex items-center gap-4">
             <Mark tone="good" className="w-20 h-20 mx-0 mb-0" />
             <div>
-              <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Interest submitted</h1>
+              <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Application submitted</h1>
               <p className="text-[15px] text-ink-2 mt-1.5">
-                Companies decide by <b className="text-ink">{DRIVE.closes}</b>
+                Companies will respond by <b className="text-ink">{DRIVE.closes}</b>
               </p>
             </div>
           </div>
@@ -41,8 +41,8 @@ export default function UnderReview({ nav }) {
               <div className="mt-3">
                 <Steps items={[
                   'Companies review your resume',
-                  'Shortlisted by anyone? Pay ₹999 once',
-                  'Attend the drive, get it back',
+                  'Get shortlisted? Pay a refundable ₹999 to confirm your seat',
+                  'Attend the drive and get your ₹999 back',
                 ]} />
               </div>
             </Card>

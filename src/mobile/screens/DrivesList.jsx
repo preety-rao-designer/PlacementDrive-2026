@@ -20,7 +20,7 @@ function DriveCard({ drive, logos, primary, onView }) {
         </div>
       </div>
       <div className="px-[18px] py-3 bg-surface-2 border-t border-line flex items-center justify-between gap-3">
-        <span className="cap">Closes {drive.closes}</span>
+        <span className="cap">Application closes {drive.closes}</span>
         <Btn size="sm" variant={primary ? 'pri' : 'sec'} onClick={onView} className="flex-none whitespace-nowrap">
           View drive
         </Btn>
@@ -33,7 +33,7 @@ export default function DrivesList({ nav }) {
   return (
     <div className="px-5 pt-1 pb-8">
       <div className="d1">Upcoming<br />drives</div>
-      <p className="b1 mt-2.5">Explore the companies coming to campus.</p>
+      <p className="b1 mt-2.5">Explore the companies visiting for placements.</p>
 
       <div className="mt-6 space-y-4">
         <DriveCard

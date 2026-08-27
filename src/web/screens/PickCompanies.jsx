@@ -49,7 +49,7 @@ export default function PickCompanies({ nav }) {
               Resume · <b className="text-ink">{LEARNER.resume}</b>
             </div>
             <Btn block className="mt-5" disabled={!count} onClick={() => nav.go('review')}>
-              {count ? `Submit interest · ${count} selected` : 'Submit interest'}
+              {count ? `Apply to ${count} companies` : 'Apply to companies'}
             </Btn>
             <p className="cap text-center mt-3">You only pay if a company shortlists you</p>
           </Card>

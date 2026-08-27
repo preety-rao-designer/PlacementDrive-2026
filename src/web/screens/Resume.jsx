@@ -10,7 +10,7 @@ export default function Resume({ nav }) {
       <div>
         <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Add your resume</h1>
         <p className="text-[15px] text-ink-2 mt-3">
-          Companies use this to decide who they shortlist. One resume covers all of them.
+          This one resume goes to every company you apply to.
         </p>
       </div>
 

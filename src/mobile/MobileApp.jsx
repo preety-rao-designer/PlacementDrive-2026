@@ -30,7 +30,7 @@ export const SCREENS = [
   { id: 'waitlist',    label: '4a · Not eligible',       title: 'Join the waitlist' },
   { id: 'waitlisted',  label: "4b · Waitlisted",         title: "You're on the list" },
   { id: 'resume',      label: '5 · Resume',              title: 'Your resume',      signedIn: true },
-  { id: 'pick',        label: '6 · Pick companies',      title: 'Mark your interest', signedIn: true },
+  { id: 'pick',        label: '6 · Pick companies',      title: 'Apply to companies', signedIn: true },
   { id: 'review',      label: '7 · Under review',        title: 'Bengaluru drive',  signedIn: true },
   { id: 'shortlisted', label: '8 · Shortlisted',         title: 'Bengaluru drive',  signedIn: true },
   { id: 'pay',         label: '8a · Payment success',    title: 'Bengaluru drive',  signedIn: true },

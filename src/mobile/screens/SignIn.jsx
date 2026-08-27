@@ -6,7 +6,7 @@ export default function SignIn({ nav }) {
     <div className="px-5 pt-3 pb-8 space-y-6">
       <div>
         <h1 className="d2">Sign in to continue</h1>
-        <p className="b1 mt-2.5">To mark interest at the Bengaluru drive</p>
+        <p className="b1 mt-2.5">To apply to the Bengaluru drive</p>
       </div>
 
       <Card tint>
@@ -14,7 +14,7 @@ export default function SignIn({ nav }) {
           <DateChip day={DRIVE.day} month={DRIVE.month} tone="mute" className="bg-white" />
           <div className="flex-1">
             <div className="t2">{DRIVE.city}</div>
-            <div className="b2 mt-0.5">{DRIVE.companies} companies · closes {DRIVE.closes}</div>
+            <div className="b2 mt-0.5">{DRIVE.companies} companies · Application closes {DRIVE.closes}</div>
           </div>
         </div>
       </Card>

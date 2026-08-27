@@ -53,7 +53,7 @@ export default function Home({ nav }) {
             </span>
             <h2 className="text-[21px] font-extrabold tracking-[-.03em] mt-3 leading-tight">24 Aug · Bengaluru</h2>
             <p className="text-[13px] text-[#B9B9C6] mt-[7px]">
-              Eight companies, one day, on campus. Open to enrolled learners.
+              Meet 8 companies in a single day. Open to all enrolled learners.
             </p>
             <div className="flex items-center mt-4">
               {COMPANY_LIST.map((c) => (

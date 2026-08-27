@@ -50,7 +50,7 @@ export function Sheet({ data, onClose, picked, onToggle, onInterest }) {
                   {selected ? 'Remove from selection' : 'Add to my selection'}
                 </Btn>
               ) : (
-                <Btn block onClick={onInterest}>Show interest</Btn>
+                <Btn block onClick={onInterest}>Apply now</Btn>
               )}
             </div>
           </>

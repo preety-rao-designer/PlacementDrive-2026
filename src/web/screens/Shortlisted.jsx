@@ -36,11 +36,11 @@ export default function Shortlisted({ nav }) {
 
         <Rail>
           <div className="rounded-lg p-7 bg-[linear-gradient(165deg,#FFF,#F7F7FC)] border border-line shadow-s2">
-            <div className="cap">Seat deposit</div>
+            <div className="cap">Refundable seat deposit</div>
             <div className="text-[52px] font-extrabold tracking-[-.05em] leading-none tabular-nums mt-2">₹999</div>
-            <div className="text-[14.5px] font-bold tracking-[-.012em] mt-2 text-ink-2">for the whole day, not per company</div>
+            <div className="text-[14.5px] font-bold tracking-[-.012em] mt-2 text-ink-2">Blocks your seat for the whole day — not charged per company</div>
             <div className="h-px bg-line my-5" />
-            {['Refunded within 24 hours of scanning in', 'Later shortlists cost nothing extra'].map((t) => (
+            {['Attend the drive — your ₹999 is refunded automatically once it ends', 'No extra charge for more shortlists that day'].map((t) => (
               <div key={t} className="flex gap-3 py-2 text-[13.5px] text-ink-2">
                 <span className="text-good flex-none mt-0.5"><Check size={18} sw={2.6} /></span>
                 <span>{t}</span>

@@ -51,7 +51,7 @@ export default function Opportunities() {
           <span className="text-good flex-none mt-px"><Check size={18} sw={2.4} /></span>
           <div>
             <div className="t3">₹999 refund started</div>
-            <div className="b2 mt-[3px]">You scanned in. Back with you in 2–4 working days.</div>
+            <div className="b2 mt-[3px]">Your drive has ended, refund is on its way, credited within 2–4 working days.</div>
           </div>
         </div>
       </Card>

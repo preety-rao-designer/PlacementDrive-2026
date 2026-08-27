@@ -1,4 +1,4 @@
-import { Btn, Card, Logo, Pill, DateChip } from '../../components/ui.jsx'
+import { Btn, Card, Logo, Pill } from '../../components/ui.jsx'
 import { TrendUp } from '../../components/Icons.jsx'
 import { COMPANIES, NEXT_DRIVE, PREP } from '../../data/companies.js'
 
@@ -48,22 +48,11 @@ export default function NotSelected({ nav }) {
 
       <div className="h-px bg-line" />
 
-      <div>
-        <div className="t2 mb-3">Next drive</div>
-        <div className="bg-surface border border-line rounded-lg overflow-hidden shadow-s2">
-          <div className="p-[18px] pb-3.5 flex items-start gap-3">
-            <DateChip day={NEXT_DRIVE.day} month={NEXT_DRIVE.month} />
-            <div className="flex-1">
-              <div className="t1">{NEXT_DRIVE.city}</div>
-              <div className="b2 mt-[3px]">{NEXT_DRIVE.companies} companies · closes {NEXT_DRIVE.closes}</div>
-            </div>
-          </div>
-          <div className="px-[18px] py-3 bg-surface-2 border-t border-line flex items-center justify-between gap-3">
-            <span className="cap">Interest is open</span>
-            <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View drive</Btn>
-          </div>
-        </div>
-      </div>
+      <Card tint>
+        <div className="t3">Build for the next one</div>
+        <p className="b2 mt-1.5">A learning path covering system design, SQL, and project depth.</p>
+        <Btn variant="sec" block className="mt-3.5">Explore roadmap</Btn>
+      </Card>
     </div>
   )
 }

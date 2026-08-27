@@ -20,7 +20,7 @@ function DriveCard({ drive, logos, primary, onView }) {
         </div>
       </div>
       <div className="px-6 py-4 bg-surface-2 border-t border-line flex items-center justify-between gap-3.5">
-        <span className="cap">Interest closes {drive.closes}</span>
+        <span className="cap">Application closes {drive.closes}</span>
         <Btn size="sm" variant={primary ? 'pri' : 'sec'} onClick={onView} className="flex-none whitespace-nowrap">View drive</Btn>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default function DrivesList({ nav }) {
   return (
     <Shell>
       <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08]">Upcoming drives</h1>
-      <p className="text-[15px] text-ink-2 mt-3">Explore the companies coming to campus.</p>
+      <p className="text-[15px] text-ink-2 mt-3">Explore the companies visiting for placements.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px] mt-7">
         <DriveCard drive={{ ...DRIVE, venue: 'Masai campus, Bengaluru' }} logos={COMPANY_LIST} primary onView={() => nav.go('drive')} />
         <DriveCard drive={NEXT_DRIVE} logos={COMPANY_LIST.slice(2)} onView={() => nav.go('drive')} />
