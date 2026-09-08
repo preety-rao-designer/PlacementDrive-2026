@@ -51,7 +51,7 @@ export default function NotSelected({ nav }) {
       <Card tint>
         <div className="t3">Build for the next one</div>
         <p className="b2 mt-1.5">A learning path covering system design, SQL, and project depth.</p>
-        <Btn variant="sec" block className="mt-3.5">Explore Roadmap</Btn>
+        <Btn block className="mt-3.5">Explore Roadmap</Btn>
       </Card>
     </div>
   )
