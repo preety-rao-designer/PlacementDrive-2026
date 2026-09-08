@@ -6,7 +6,7 @@ export function JdBody({ company, dense }) {
     ['Package', company.ctc],
     ['Openings', company.seats],
     ['Experience', company.exp],
-    ['Location', company.loc],
+    ['Mode', company.mode],
   ]
   return (
     <>
@@ -51,7 +51,7 @@ export function JdHeader({ company, size = 'lg', onClose, closeEl }) {
       <Logo company={company} size={size} />
       <div className="flex-1 min-w-0">
         <div className="t1">{company.name}</div>
-        <div className="b2 mt-0.5">{company.role}</div>
+        <div className="b2 mt-0.5">{company.role}, {company.loc}</div>
       </div>
       {closeEl}
     </div>

@@ -1,20 +1,36 @@
 import { Btn, Card, Logo, Pill } from '../../components/ui.jsx'
-import { Check } from '../../components/Icons.jsx'
+import { Check, Alert, Calendar, Clock, Pin } from '../../components/Icons.jsx'
 import { Shell, Split, Rail } from '../layout.jsx'
 import { COMPANIES, DRIVE } from '../../data/companies.js'
+
+const driveMeta = [
+  [Calendar, DRIVE.date],
+  [Clock, DRIVE.time],
+  [Pin, 'Masai campus'],
+]
 
 export default function Shortlisted({ nav }) {
   return (
     <Shell>
-      <Split>
-        <div>
-          <Pill tone="good" dot>Zeta shortlisted you</Pill>
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">
-            You're in for the Bengaluru drive
-          </h1>
-          <p className="text-[15px] text-ink-2 mt-3">24 August, {DRIVE.time} · {DRIVE.venue}</p>
+      <Pill tone="good" dot>Zeta shortlisted you</Pill>
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.015em] leading-[1.08] mt-4">
+        You're in for the Bengaluru drive
+      </h1>
+      <div className="flex items-center flex-wrap gap-4 mt-4">
+        {driveMeta.map(([Icon, label], i) => (
+          <span key={i} className="flex items-center gap-4">
+            {i > 0 && <span className="w-px h-4 bg-line-2" aria-hidden />}
+            <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-ink-2">
+              <Icon size={15} sw={2.2} className="text-ink-3" />
+              {label}
+            </span>
+          </span>
+        ))}
+      </div>
 
-          <Card flush className="mt-7">
+      <Split className="mt-7">
+        <div>
+          <Card flush>
             {[['zeta', 'good', 'Shortlisted'], ['razorpay', 'brand', 'Under review']].map(([k, tone, label]) => (
               <div key={k} className="flex items-center gap-4 px-6 py-5 border-b border-line last:border-0">
                 <Logo company={k} />
@@ -36,16 +52,23 @@ export default function Shortlisted({ nav }) {
 
         <Rail>
           <div className="rounded-lg p-7 bg-[linear-gradient(165deg,#FFF,#F7F7FC)] border border-line shadow-s2">
-            <div className="cap">Refundable seat deposit</div>
+            <div className="cap">Fully refundable deposit</div>
             <div className="text-[52px] font-extrabold tracking-[-.05em] leading-none tabular-nums mt-2">₹999</div>
-            <div className="text-[14.5px] font-bold tracking-[-.012em] mt-2 text-ink-2">Blocks your seat for the whole day — not charged per company</div>
+            <div className="text-[14.5px] font-bold tracking-[-.012em] mt-2 text-ink-2">Holds your seat for all interviews on drive day</div>
             <div className="h-px bg-line my-5" />
-            {['Attend the drive — your ₹999 is refunded automatically once it ends', 'No extra charge for more shortlists that day'].map((t) => (
-              <div key={t} className="flex gap-3 py-2 text-[13.5px] text-ink-2">
-                <span className="text-good flex-none mt-0.5"><Check size={18} sw={2.6} /></span>
-                <span>{t}</span>
-              </div>
-            ))}
+            {[
+              { t: 'Attend the drive and get a full ₹999 refund within 24–48 hours.', tone: 'good' },
+              { t: 'Amount is non-refundable if you do not attend.', tone: 'warn' },
+              { t: 'Covers unlimited company shortlists with no extra fee.', tone: 'good' },
+            ].map(({ t, tone }) => {
+              const Icon = tone === 'good' ? Check : Alert
+              return (
+                <div key={t} className="flex gap-3 py-2 text-[13.5px] text-ink-2">
+                  <span className={'flex-none mt-0.5 ' + (tone === 'good' ? 'text-good' : 'text-warn')}><Icon size={18} sw={2.6} /></span>
+                  <span>{t}</span>
+                </div>
+              )
+            })}
             <Btn block className="mt-5" onClick={nav.startPay}>Pay ₹999</Btn>
             <p className="cap text-center mt-3">Confirm by {DRIVE.payBy}</p>
           </div>

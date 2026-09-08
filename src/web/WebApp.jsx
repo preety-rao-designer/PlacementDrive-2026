@@ -3,7 +3,7 @@ import { usePrototype } from '../components/usePrototype.js'
 import { PayFlow } from '../components/PayFlow.jsx'
 import { Modal } from './Modal.jsx'
 import { LEARNER } from '../data/companies.js'
-import { cx } from '../components/ui.jsx'
+import { cx, Toast } from '../components/ui.jsx'
 
 import Home from './screens/Home.jsx'
 import DrivesList from './screens/DrivesList.jsx'
@@ -145,7 +145,8 @@ export default function WebApp() {
         />
       </div>
 
-      <PayFlow fixed open={paying} onDone={() => { setPaying(false); p.go('confirmed') }} />
+      <PayFlow fixed open={paying} onDone={() => { setPaying(false); p.notify('Payment successful'); p.go('confirmed') }} />
+      <Toast fixed message={p.toast} />
     </div>
   )
 }

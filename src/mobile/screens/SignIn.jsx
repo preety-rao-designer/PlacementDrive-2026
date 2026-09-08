@@ -5,8 +5,7 @@ export default function SignIn({ nav }) {
   return (
     <div className="px-5 pt-3 pb-8 space-y-6">
       <div>
-        <h1 className="d2">Sign in to continue</h1>
-        <p className="b1 mt-2.5">To apply to the Bengaluru drive</p>
+        <h1 className="d2">Sign in to apply</h1>
       </div>
 
       <Card tint>
@@ -19,15 +18,15 @@ export default function SignIn({ nav }) {
         </div>
       </Card>
 
-      <Btn block onClick={() => nav.go('resume')}>Continue with Masai account</Btn>
+      <Btn block onClick={() => nav.go('resume')}>Continue With Masai Account</Btn>
 
       <div className="h-px bg-line" />
 
       <Card>
         <div className="t2">Not a Masai learner?</div>
-        <p className="b2 mt-1.5">Open to enrolled learners for now. Browsing stays open to everyone.</p>
+        <p className="b2 mt-1.5">Future placement drives will open to all learners. Get early access when public registrations launch.</p>
         <Btn variant="sec" block className="mt-4" onClick={() => nav.go('waitlist')}>
-          Notify me when this opens up
+          Notify Me About Future Drives
         </Btn>
       </Card>
     </div>

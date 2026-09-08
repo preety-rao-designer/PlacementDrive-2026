@@ -12,8 +12,8 @@ export const Narrow = ({ className, children }) => (
 )
 
 /** Content + sticky rail. Collapses to one column under 1024px. */
-export const Split = ({ children }) => (
-  <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_372px] gap-8 items-start">{children}</div>
+export const Split = ({ className, children }) => (
+  <div className={cx('grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_372px] gap-8 items-start', className)}>{children}</div>
 )
 
 export const Rail = ({ children }) => (

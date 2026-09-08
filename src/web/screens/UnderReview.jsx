@@ -6,19 +6,19 @@ export default function UnderReview({ nav }) {
   const rows = nav.picked.length ? nav.picked : ['zeta', 'razorpay']
   return (
     <Shell>
-      <Split>
+      <div className="flex items-center gap-4">
+        <Mark tone="good" className="w-20 h-20 !mx-0 !mb-0" />
         <div>
-          <div className="flex items-center gap-4">
-            <Mark tone="good" className="w-20 h-20 !mx-0 !mb-0" />
-            <div>
-              <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Application submitted</h1>
-              <p className="text-[15px] text-ink-2 mt-1.5">
-                Companies will respond by <b className="text-ink">{DRIVE.closes}</b>
-              </p>
-            </div>
-          </div>
+          <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Application submitted</h1>
+          <p className="text-[15px] text-ink-2 mt-1.5">
+            Companies will respond by <b className="text-ink">{DRIVE.closes}</b>
+          </p>
+        </div>
+      </div>
 
-          <Card flush className="mt-7">
+      <Split className="mt-7">
+        <div>
+          <Card flush>
             {rows.map((k) => (
               <div key={k} className="flex items-center gap-4 px-6 py-5 border-b border-line last:border-0">
                 <Logo company={k} />
@@ -31,7 +31,7 @@ export default function UnderReview({ nav }) {
             ))}
           </Card>
 
-          <Btn variant="sec" className="mt-6" onClick={() => nav.go('pick')}>Add more companies</Btn>
+          <Btn variant="sec" className="mt-6" onClick={() => nav.go('pick')}>Add More Companies</Btn>
         </div>
 
         <Rail>

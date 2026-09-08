@@ -63,9 +63,9 @@ export default function Home({ nav }) {
             </div>
             <button
               onClick={() => nav.go('list')}
-              className="w-full mt-4 bg-white text-masai-black rounded-full py-3.5 text-[14.5px] font-extrabold tracking-[-.015em] flex items-center justify-center gap-2"
+              className="w-full mt-4 bg-masai-red text-white rounded-full py-3.5 text-[14.5px] font-extrabold tracking-[-.015em] flex items-center justify-center gap-2"
             >
-              See upcoming drives <ArrowRight size={16} sw={2.8} />
+              See Upcoming Drives <ArrowRight size={16} sw={2.8} />
             </button>
           </div>
         </div>

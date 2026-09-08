@@ -1,23 +1,38 @@
 import { Btn, Card, Pill, Logo, Kv } from '../../components/ui.jsx'
-import { ChevronRight } from '../../components/Icons.jsx'
+import { ChevronRight, Calendar, Clock, Pin } from '../../components/Icons.jsx'
 import { Shell, Split, Rail, Crumb } from '../layout.jsx'
 import { COMPANY_LIST, DRIVE } from '../../data/companies.js'
+
+const driveMeta = [
+  [Calendar, DRIVE.date],
+  [Clock, DRIVE.time],
+  [Pin, DRIVE.venue.split(',')[0]],
+]
 
 export default function DriveDetail({ nav }) {
   return (
     <Shell>
       <Crumb onClick={() => nav.go('list')}>All drives</Crumb>
+
+      <Pill tone="brand" dot>Application closes {DRIVE.closes}</Pill>
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">Bengaluru drive</h1>
+      <div className="flex items-center flex-wrap gap-4 mt-4">
+        {driveMeta.map(([Icon, label], i) => (
+          <span key={i} className="flex items-center gap-4">
+            {i > 0 && <span className="w-px h-4 bg-line-2" aria-hidden />}
+            <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-ink-2">
+              <Icon size={15} sw={2.2} className="text-ink-3" />
+              {label}
+            </span>
+          </span>
+        ))}
+      </div>
+      <div className="flex items-center justify-between mt-7 mb-4">
+        <div className="t1">{DRIVE.companies} companies attending</div>
+      </div>
+
       <Split>
         <div>
-          <Pill tone="brand" dot>Application closes {DRIVE.closes}</Pill>
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">Bengaluru drive</h1>
-          <p className="text-[15px] text-ink-2 mt-3">{DRIVE.dateLong} · {DRIVE.venue}</p>
-
-          <div className="flex items-center justify-between mt-7 mb-4">
-            <div className="t1">{DRIVE.companies} companies attending</div>
-            <span className="cap">Click a company for full details</span>
-          </div>
-
           <Card flush>
             {COMPANY_LIST.map((c) => (
               <button
@@ -46,7 +61,7 @@ export default function DriveDetail({ nav }) {
             <Kv k="Companies" v={DRIVE.companies} />
             <Kv k="Application closes" v={DRIVE.closes} />
             <div className="h-px bg-line my-4" />
-            <Btn block onClick={() => nav.go('signin')}>Apply now</Btn>
+            <Btn block onClick={() => nav.go('signin')}>Apply Now</Btn>
           </Card>
         </Rail>
       </Split>

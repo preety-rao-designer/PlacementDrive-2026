@@ -8,7 +8,9 @@ export function usePrototype(initial) {
   const [screen, setScreen] = useState(initial)
   const [picked, setPicked] = useState([])
   const [hasResume, setHasResume] = useState(false)
+  const [toast, setToast] = useState(null)
   const stack = useRef([])
+  const toastTimer = useRef(null)
 
   const go = useCallback((id) => {
     setScreen((cur) => {
@@ -30,6 +32,16 @@ export function usePrototype(initial) {
     setPicked((p) => (p.includes(key) ? p.filter((k) => k !== key) : [...p, key]))
   }, [])
 
+  const toggleAllPicked = useCallback((keys) => {
+    setPicked((p) => (p.length === keys.length ? [] : keys))
+  }, [])
+
+  const notify = useCallback((message) => {
+    clearTimeout(toastTimer.current)
+    setToast(message)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }, [])
+
   const reset = useCallback(() => {
     stack.current = []
     setPicked([])
@@ -37,5 +49,5 @@ export function usePrototype(initial) {
     setScreen(initial)
   }, [initial])
 
-  return { screen, go, back, jump, reset, picked, togglePick, hasResume, setHasResume }
+  return { screen, go, back, jump, reset, picked, togglePick, toggleAllPicked, hasResume, setHasResume, toast, notify }
 }

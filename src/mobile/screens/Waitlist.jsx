@@ -12,7 +12,7 @@ export default function Waitlist({ nav }) {
         <Pill>Not enrolled at Masai</Pill>
         <h1 className="d2 mt-3">Drives aren't open to you yet</h1>
         <p className="b1 mt-2.5">
-          These drives are only for enrolled learners right now. Share your email and we'll notify you when that changes.
+          This drive is open to enrolled learners only. Share your email and we'll notify you about future drives open to everyone.
         </p>
       </div>
 
@@ -39,7 +39,7 @@ export default function Waitlist({ nav }) {
       </div>
 
       <div className="space-y-2.5">
-        <Btn block disabled={!valid} onClick={() => nav.go('waitlisted')}>Join the waitlist</Btn>
+        <Btn block disabled={!valid} onClick={() => nav.go('waitlisted')}>Join The Waitlist</Btn>
         <p className="cap text-center">We'll only email about drives. Unsubscribe any time.</p>
       </div>
 
@@ -48,7 +48,7 @@ export default function Waitlist({ nav }) {
       <Card tint>
         <div className="t3">Explore our programmes</div>
         <p className="b2 mt-1.5">See the programmes that lead to drives like this one. No account needed.</p>
-        <Btn variant="sec" block className="mt-3.5">View our programmes</Btn>
+        <Btn variant="sec" block className="mt-3.5">View Our Programmes</Btn>
       </Card>
     </div>
   )

@@ -6,8 +6,7 @@ export default function SignIn({ nav }) {
   return (
     <Narrow className="pt-6 space-y-7">
       <div className="text-center">
-        <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Sign in to continue</h1>
-        <p className="text-[15px] text-ink-2 mt-3">To apply to the Bengaluru drive</p>
+        <h1 className="text-[25px] lg:text-[30px] font-extrabold tracking-[-.032em]">Sign in to apply</h1>
       </div>
 
       <Card className="p-6">
@@ -19,7 +18,7 @@ export default function SignIn({ nav }) {
           </div>
         </div>
         <div className="h-px bg-line my-6" />
-        <Btn block onClick={() => nav.go('resume')}>Continue with Masai account</Btn>
+        <Btn block onClick={() => nav.go('resume')}>Continue With Masai Account</Btn>
         <p className="cap text-center mt-3.5">Takes you straight back to this drive</p>
       </Card>
 
@@ -27,9 +26,9 @@ export default function SignIn({ nav }) {
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div>
             <div className="t2">Not a Masai learner?</div>
-            <div className="b2 mt-1">Open to enrolled learners for now.</div>
+            <div className="b2 mt-1">Future placement drives will open to all learners. Get early access when public registrations launch.</div>
           </div>
-          <Btn size="sm" variant="sec" onClick={() => nav.go('waitlist')}>Notify me</Btn>
+          <Btn size="sm" variant="sec" onClick={() => nav.go('waitlist')}>Notify Me About Future Drives</Btn>
         </div>
       </Card>
     </Narrow>

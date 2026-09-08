@@ -22,7 +22,7 @@ function DriveCard({ drive, logos, primary, onView }) {
       <div className="px-[18px] py-3 bg-surface-2 border-t border-line flex items-center justify-between gap-3">
         <span className="cap">Application closes {drive.closes}</span>
         <Btn size="sm" variant={primary ? 'pri' : 'sec'} onClick={onView} className="flex-none whitespace-nowrap">
-          View drive
+          View Drive
         </Btn>
       </div>
     </div>

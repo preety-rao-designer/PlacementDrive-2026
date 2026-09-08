@@ -25,8 +25,8 @@ export default function Waitlisted({ nav }) {
       </Card>
 
       <div className="flex gap-3 justify-center">
-        <Btn onClick={() => nav.go('list')}>Browse upcoming drives</Btn>
-        <Btn variant="sec">Explore Masai programmes</Btn>
+        <Btn onClick={() => nav.go('list')}>Browse Upcoming Drives</Btn>
+        <Btn variant="sec">Explore Masai Programmes</Btn>
       </div>
     </Narrow>
   )

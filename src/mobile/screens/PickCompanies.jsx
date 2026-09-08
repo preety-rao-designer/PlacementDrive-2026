@@ -4,15 +4,26 @@ import { COMPANY_LIST } from '../../data/companies.js'
 
 export default function PickCompanies({ nav }) {
   const count = nav.picked.length
+  const allSelected = count === COMPANY_LIST.length
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-2 pb-28 space-y-6">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-2 pb-28">
         <div>
           <h1 className="d2">Who do you want to meet?</h1>
           <p className="b1 mt-2.5">Pick as many companies as you like.</p>
         </div>
 
-        <Card flush>
+        <div className="flex items-center justify-between mt-6">
+          <div className="t2">{COMPANY_LIST.length} companies</div>
+          <button
+            onClick={() => nav.toggleAllPicked(COMPANY_LIST.map((c) => c.key))}
+            className="text-[13px] font-bold text-brand"
+          >
+            {allSelected ? 'Clear All' : 'Select All'}
+          </button>
+        </div>
+
+        <Card flush className="mt-3.5">
           {COMPANY_LIST.map((c) => (
             <div
               key={c.key}
@@ -41,8 +52,8 @@ export default function PickCompanies({ nav }) {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
-        <Btn block disabled={!count} onClick={() => nav.go('review')}>
-          {count ? `Apply to ${count} companies` : 'Apply to companies'}
+        <Btn block disabled={!count} onClick={() => { nav.notify('Application submitted'); nav.go('review') }}>
+          {count ? `Apply To ${count} ${count === 1 ? 'Company' : 'Companies'}` : 'Apply To Companies'}
         </Btn>
       </div>
     </div>

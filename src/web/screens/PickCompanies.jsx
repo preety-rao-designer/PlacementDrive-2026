@@ -5,17 +5,30 @@ import { COMPANY_LIST, COMPANIES, LEARNER } from '../../data/companies.js'
 
 export default function PickCompanies({ nav }) {
   const count = nav.picked.length
+  const allSelected = count === COMPANY_LIST.length
   return (
     <Shell>
       <Crumb onClick={() => nav.go('resume')}>Resume</Crumb>
-      <Split>
-        <div>
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08]">
-            Who do you want to meet?
-          </h1>
-          <p className="text-[15px] text-ink-2 mt-3">Pick as many companies as you like.</p>
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08]">
+        Who do you want to meet?
+      </h1>
+      <p className="text-[15px] text-ink-2 mt-3">Pick as many companies as you like.</p>
 
-          <Card flush className="mt-7">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_372px] gap-8 mt-7">
+        <div className="flex items-center justify-between">
+          <div className="t1">{COMPANY_LIST.length} companies</div>
+          <button
+            onClick={() => nav.toggleAllPicked(COMPANY_LIST.map((c) => c.key))}
+            className="text-[13.5px] font-bold text-brand"
+          >
+            {allSelected ? 'Clear All' : 'Select All'}
+          </button>
+        </div>
+      </div>
+
+      <Split className="mt-4">
+        <div>
+          <Card flush>
             {COMPANY_LIST.map((c) => (
               <div
                 key={c.key}
@@ -48,8 +61,8 @@ export default function PickCompanies({ nav }) {
             <div className="text-[13.5px] text-ink-2">
               Resume · <b className="text-ink">{LEARNER.resume}</b>
             </div>
-            <Btn block className="mt-5" disabled={!count} onClick={() => nav.go('review')}>
-              {count ? `Apply to ${count} companies` : 'Apply to companies'}
+            <Btn block className="mt-5" disabled={!count} onClick={() => { nav.notify('Application submitted'); nav.go('review') }}>
+              {count ? `Apply To ${count} ${count === 1 ? 'Company' : 'Companies'}` : 'Apply To Companies'}
             </Btn>
           </Card>
         </Rail>

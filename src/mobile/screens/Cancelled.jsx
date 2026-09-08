@@ -11,7 +11,7 @@ function Timeline({ items }) {
           <span
             className={
               'absolute -left-[22px] top-[11px] w-2.5 h-2.5 rounded-full ring-[3px] ring-white ' +
-              (state === 'done' ? 'bg-good' : state === 'now' ? 'bg-brand ring-offset-0 shadow-[0_0_0_6px_var(--brand-tint)]' : 'bg-line-2')
+              (state === 'done' ? 'bg-good' : state === 'now' ? 'bg-brand ring-offset-0 shadow-[0_0_0_6px_rgb(var(--brand-tint))]' : 'bg-line-2')
             }
           />
           <b className="block text-ink font-bold text-sm mb-0.5">{title}</b>
@@ -24,8 +24,8 @@ function Timeline({ items }) {
 
 export default function Cancelled({ nav }) {
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-2.5 pb-28 space-y-6">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-2.5 pb-28 space-y-6">
         <Notice tone="stop" title="Zeta has cancelled" icon={<Alert size={19} />}>
           They've pulled out of the 24 Aug drive.
         </Notice>
@@ -74,14 +74,14 @@ export default function Cancelled({ nav }) {
             </div>
             <div className="px-[18px] py-3 bg-surface-2 border-t border-line flex items-center justify-between gap-3">
               <span className="cap">Application is open</span>
-              <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View drive</Btn>
+              <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View Drive</Btn>
             </div>
           </div>
         </div>
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
-        <Btn variant="ghost" block onClick={() => nav.go('list')}>Back to drives</Btn>
+        <Btn variant="ghost" block onClick={() => nav.go('list')}>Back To Drives</Btn>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ function OppCard({ company, status, tone, room }) {
           </div>
           <Pill tone={tone}>{status}</Pill>
         </div>
-        <MetaChips company={c} only={['mode', 'ctc', 'loc']} />
+        <MetaChips company={c} only={['exp', 'ctc', 'loc']} />
       </div>
       <div className={cx(
         'px-6 py-3.5 border-t border-line text-[13.5px] font-semibold flex items-center gap-2.5',
@@ -32,21 +32,24 @@ function OppCard({ company, status, tone, room }) {
 export default function Opportunities() {
   return (
     <Shell>
-      <Split>
+      <h1 className="d2">My opportunities</h1>
+      <div className="rounded-md px-[22px] py-[18px] mt-5 bg-[linear-gradient(150deg,#5B4BFF,#2E2AE0)] text-white flex items-center gap-3.5">
+        <span className="w-[9px] h-[9px] rounded-full bg-[#6EE7B7] flex-none shadow-[0_0_0_5px_rgba(110,231,183,.25)] animate-blink" />
+        <div className="flex-1">
+          <div className="text-base font-bold tracking-[-.018em]">Bengaluru drive is live</div>
+          <div className="text-[13.5px] text-[#CFCBFF] mt-0.5">Masai campus · scanned in 9:04 AM</div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_372px] gap-8 mt-5">
+        <div className="flex items-center justify-between">
+          <div className="t1">2 companies today</div>
+          <Pill>Updated live</Pill>
+        </div>
+      </div>
+
+      <Split className="mt-5">
         <div className="space-y-[18px]">
-          <div className="rounded-md px-[22px] py-[18px] bg-[linear-gradient(150deg,#5B4BFF,#2E2AE0)] text-white flex items-center gap-3.5">
-            <span className="w-[9px] h-[9px] rounded-full bg-[#6EE7B7] flex-none shadow-[0_0_0_5px_rgba(110,231,183,.25)] animate-blink" />
-            <div className="flex-1">
-              <div className="text-base font-bold tracking-[-.018em]">Bengaluru drive is live</div>
-              <div className="text-[13.5px] text-[#CFCBFF] mt-0.5">Masai campus · scanned in 9:04 AM</div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="t1">2 companies today</div>
-            <Pill>Updated live</Pill>
-          </div>
-
           <OppCard company="zeta" status="Interview round" tone="good" room="Room 204 · 2nd floor · report by 10:30 AM" />
           <OppCard company="razorpay" status="Assignment round" tone="brand" />
 

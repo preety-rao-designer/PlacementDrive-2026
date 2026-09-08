@@ -6,14 +6,14 @@ import { COMPANIES, NEXT_DRIVE, PREP } from '../../data/companies.js'
 export default function NotSelected({ nav }) {
   return (
     <Shell>
-      <Split>
-        <div>
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08]">
-            Not shortlisted this time
-          </h1>
-          <p className="text-[15px] text-ink-2 mt-3">No company picked you this time. No money was taken.</p>
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08]">
+        Not shortlisted this time
+      </h1>
+      <p className="text-[15px] text-ink-2 mt-3">No company picked you this time. No money was taken.</p>
 
-          <Card flush className="mt-7">
+      <Split className="mt-7">
+        <div>
+          <Card flush>
             {['zeta', 'razorpay'].map((k) => (
               <div key={k} className="flex items-center gap-4 px-6 py-5 border-b border-line last:border-0">
                 <Logo company={k} dim />
@@ -46,7 +46,7 @@ export default function NotSelected({ nav }) {
                 </div>
               ))}
             </div>
-            <p className="cap mt-5 leading-relaxed">What companies asked for — not why you weren't picked.</p>
+            <p className="cap mt-5 leading-relaxed">What companies asked for, not why you weren't picked.</p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function NotSelected({ nav }) {
           <Card tint className="p-6">
             <div className="t2">Build for the next one</div>
             <p className="text-[15px] text-ink-2 mt-2">A learning path covering system design, SQL, and project depth.</p>
-            <Btn block className="mt-5">Explore roadmap</Btn>
+            <Btn block className="mt-5">Explore Roadmap</Btn>
           </Card>
         </Rail>
       </Split>

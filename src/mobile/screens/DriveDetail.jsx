@@ -1,18 +1,33 @@
 import { Btn, Card, Pill, Logo, MetaChips } from '../../components/ui.jsx'
-import { ChevronRight } from '../../components/Icons.jsx'
+import { ChevronRight, Calendar, Clock, Pin } from '../../components/Icons.jsx'
 import { COMPANY_LIST, DRIVE } from '../../data/companies.js'
+
+const driveMeta = [
+  [Calendar, DRIVE.date],
+  [Clock, DRIVE.time],
+  [Pin, DRIVE.venue.split(',')[0]],
+]
 
 export default function DriveDetail({ nav }) {
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-1 pb-24">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-1 pb-24">
         <Pill tone="brand" dot>Application closes {DRIVE.closes}</Pill>
         <h1 className="d1 mt-3">Bengaluru drive</h1>
-        <p className="b1 mt-2.5">{DRIVE.date}, {DRIVE.time} · {DRIVE.venue}</p>
+        <div className="flex items-center flex-wrap gap-3 mt-3.5">
+          {driveMeta.map(([Icon, label], i) => (
+            <span key={i} className="flex items-center gap-3">
+              {i > 0 && <span className="w-px h-3.5 bg-line-2" aria-hidden />}
+              <span className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink-2">
+                <Icon size={14} sw={2.2} className="text-ink-3" />
+                {label}
+              </span>
+            </span>
+          ))}
+        </div>
 
-        <div className="flex items-center justify-between mt-6 mb-3">
+        <div className="mt-6 mb-3">
           <div className="t2">{DRIVE.companies} companies attending</div>
-          <span className="cap">Tap for full details</span>
         </div>
 
         <Card flush>
@@ -39,7 +54,7 @@ export default function DriveDetail({ nav }) {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
-        <Btn block onClick={() => nav.go('signin')}>Apply now</Btn>
+        <Btn block onClick={() => nav.go('signin')}>Apply Now</Btn>
       </div>
     </div>
   )

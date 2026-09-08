@@ -4,8 +4,8 @@ import { LEARNER } from '../../data/companies.js'
 
 export default function Resume({ nav }) {
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-3 pb-24 space-y-6">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-3 pb-24 space-y-6">
         <div>
           <h1 className="d2">Add your resume</h1>
           <p className="b1 mt-2.5">This one resume goes to every company you apply to.</p>
@@ -40,7 +40,7 @@ export default function Resume({ nav }) {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%]">
-        <Btn block disabled={!nav.hasResume} onClick={() => nav.go('pick')}>Save and continue</Btn>
+        <Btn block disabled={!nav.hasResume} onClick={() => { nav.notify('Resume saved'); nav.go('pick') }}>Save And Continue</Btn>
       </div>
     </div>
   )

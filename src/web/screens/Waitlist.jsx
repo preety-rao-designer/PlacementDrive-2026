@@ -9,17 +9,17 @@ export default function Waitlist({ nav }) {
 
   return (
     <Shell>
-      <Split>
-        <div>
-          <Pill>Not enrolled at Masai</Pill>
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">
-            Drives aren't open to you yet
-          </h1>
-          <p className="text-[15px] text-ink-2 mt-3 max-w-[520px]">
-            These drives are only for enrolled learners right now. Share your email and we'll notify you when that changes.
-          </p>
+      <Pill>Not enrolled at Masai</Pill>
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-4">
+        Drives aren't open to you yet
+      </h1>
+      <p className="text-[15px] text-ink-2 mt-3 max-w-[520px]">
+        This drive is open to enrolled learners only. Share your email and we'll notify you about future drives open to everyone.
+      </p>
 
-          <Card className="p-6 mt-7 max-w-[520px]">
+      <Split className="mt-7">
+        <div>
+          <Card className="p-6 max-w-[520px]">
             <div className="space-y-[18px]">
               <Field label="Full name"><Input type="text" placeholder="Preety Rao" /></Field>
               <Field label="Email">
@@ -44,7 +44,7 @@ export default function Waitlist({ nav }) {
             <div className="h-px bg-line my-6" />
             <div className="flex items-center justify-between gap-4 flex-wrap">
               <span className="cap">We'll only email about drives. Unsubscribe any time.</span>
-              <Btn disabled={!valid} onClick={() => nav.go('waitlisted')}>Join the waitlist</Btn>
+              <Btn disabled={!valid} onClick={() => nav.go('waitlisted')}>Join The Waitlist</Btn>
             </div>
           </Card>
         </div>
@@ -53,7 +53,7 @@ export default function Waitlist({ nav }) {
           <Card tint className="p-6">
             <div className="t2">Explore our programmes</div>
             <p className="text-[15px] text-ink-2 mt-2">See the programmes that lead to drives like this one. No account needed.</p>
-            <Btn variant="sec" block className="mt-5">View our programmes</Btn>
+            <Btn variant="sec" block className="mt-5">View Our Programmes</Btn>
           </Card>
         </Rail>
       </Split>

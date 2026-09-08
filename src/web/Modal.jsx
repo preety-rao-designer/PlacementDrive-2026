@@ -54,10 +54,10 @@ export function Modal({ data, onClose, picked, onToggle, onInterest }) {
               <Btn variant="sec" onClick={onClose}>Close</Btn>
               {inPick ? (
                 <Btn variant={selected ? 'sec' : 'pri'} onClick={() => onToggle(company.key)}>
-                  {selected ? 'Remove from selection' : 'Add to my selection'}
+                  {selected ? 'Remove From Selection' : 'Add To My Selection'}
                 </Btn>
               ) : (
-                <Btn onClick={onInterest}>Apply now</Btn>
+                <Btn onClick={onInterest}>Apply Now</Btn>
               )}
             </div>
           </>

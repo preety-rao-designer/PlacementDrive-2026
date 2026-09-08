@@ -54,7 +54,7 @@ export default function Confirmed({ nav }) {
                 <div className="text-[13.5px] text-ink-2 mt-0.5">Refunded automatically once the drive ends.</div>
               </div>
               <div className="flex gap-2.5">
-                <Btn size="sm" variant="sec">Add to calendar</Btn>
+                <Btn size="sm" variant="sec">Add To Calendar</Btn>
                 <Btn size="sm" variant="sec">Directions</Btn>
               </div>
             </div>
@@ -63,8 +63,8 @@ export default function Confirmed({ nav }) {
       </div>
 
       <div className="flex gap-3 justify-center mt-7">
-        <Btn variant="sec" onClick={() => nav.go('opps')}>View my opportunities</Btn>
-        <Btn variant="ghost" onClick={() => nav.go('list')}>Back to drives</Btn>
+        <Btn variant="sec" onClick={() => nav.go('opps')}>View My Opportunities</Btn>
+        <Btn variant="ghost" onClick={() => nav.go('list')}>Back To Drives</Btn>
       </div>
     </Shell>
   )

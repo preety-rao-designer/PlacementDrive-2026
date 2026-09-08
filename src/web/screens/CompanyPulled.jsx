@@ -7,13 +7,14 @@ import { Ticket } from './Confirmed.jsx'
 export default function CompanyPulled({ nav }) {
   return (
     <Shell>
-      <Split>
-        <div>
-          <Notice tone="warn" title="Zeta has pulled out" icon={<Alert size={21} />}>
-            Razorpay is still interviewing you. Your seat and your ₹999 stay as they are.
-          </Notice>
+      <h1 className="d2 mb-5">Your pass</h1>
+      <Notice tone="warn" title="Zeta has pulled out" icon={<Alert size={21} />}>
+        Razorpay is still interviewing you. Your seat and your ₹999 stay as they are.
+      </Notice>
 
-          <Card flush className="mt-7">
+      <Split className="mt-7">
+        <div>
+          <Card flush>
             {[['zeta', true], ['razorpay', false]].map(([k, dim]) => (
               <div key={k} className="flex items-center gap-4 px-6 py-5 border-b border-line last:border-0">
                 <Logo company={k} dim={dim} />
@@ -40,8 +41,8 @@ export default function CompanyPulled({ nav }) {
               Since Zeta dropped out, if you'd rather skip it, you can withdraw for a full refund.
             </p>
             <div className="h-px bg-line my-5" />
-            <Btn variant="sec" block>Withdraw and get ₹999 back</Btn>
-            <Btn variant="ghost" block className="mt-2.5" onClick={() => nav.go('confirmed')}>Keep my seat</Btn>
+            <Btn variant="sec" block>Withdraw And Get ₹999 Back</Btn>
+            <Btn variant="ghost" block className="mt-2.5" onClick={() => nav.go('confirmed')}>Keep My Seat</Btn>
           </Card>
         </Rail>
       </Split>

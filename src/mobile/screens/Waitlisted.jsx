@@ -3,8 +3,8 @@ import { LEARNER } from '../../data/companies.js'
 
 export default function Waitlisted({ nav }) {
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-8 pb-32 space-y-6">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-8 pb-32 space-y-6">
         <Mark tone="good" />
         <div className="text-center">
           <h1 className="d2">You're on the list</h1>
@@ -24,8 +24,8 @@ export default function Waitlisted({ nav }) {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%] space-y-2.5">
-        <Btn block onClick={() => nav.go('list')}>Browse upcoming drives</Btn>
-        <Btn variant="sec" block>Explore Masai programmes</Btn>
+        <Btn block onClick={() => nav.go('list')}>Browse Upcoming Drives</Btn>
+        <Btn variant="sec" block>Explore Masai Programmes</Btn>
       </div>
     </div>
   )

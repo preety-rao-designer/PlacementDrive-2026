@@ -4,7 +4,7 @@ import { PayFlow } from '../components/PayFlow.jsx'
 import { Sheet } from './Sheet.jsx'
 import { ChevronLeft } from '../components/Icons.jsx'
 import { LEARNER } from '../data/companies.js'
-import { cx } from '../components/ui.jsx'
+import { cx, Toast } from '../components/ui.jsx'
 
 import Home from './screens/Home.jsx'
 import DrivesList from './screens/DrivesList.jsx'
@@ -23,22 +23,22 @@ import CompanyPulled from './screens/CompanyPulled.jsx'
 import Opportunities from './screens/Opportunities.jsx'
 
 export const SCREENS = [
-  { id: 'home',        label: '1 · Website home',        title: 'Masai',            noBack: true, site: true },
-  { id: 'list',        label: '2 · Drives list',         title: 'Placement drives' },
-  { id: 'drive',       label: '3 · Drive detail',        title: 'Bengaluru drive' },
-  { id: 'signin',      label: '4 · Sign in',             title: 'Sign in' },
-  { id: 'waitlist',    label: '4a · Not eligible',       title: 'Join the waitlist' },
-  { id: 'waitlisted',  label: "4b · Waitlisted",         title: "You're on the list" },
-  { id: 'resume',      label: '5 · Resume',              title: 'Your resume',      signedIn: true },
-  { id: 'pick',        label: '6 · Pick companies',      title: 'Apply to companies', signedIn: true },
-  { id: 'review',      label: '7 · Under review',        title: 'Bengaluru drive',  signedIn: true },
-  { id: 'shortlisted', label: '8 · Shortlisted',         title: 'Bengaluru drive',  signedIn: true },
-  { id: 'pay',         label: '8a · Payment success',    title: 'Bengaluru drive',  signedIn: true },
-  { id: 'confirmed',   label: '9 · Confirmed pass',      title: 'Your pass',        signedIn: true },
-  { id: 'notselected', label: '10 · Not selected',       title: 'Bengaluru drive',  signedIn: true },
-  { id: 'cancelled',   label: '11 · Company cancelled',  title: 'Bengaluru drive',  signedIn: true },
-  { id: 'copulled',    label: '11a · One company pulled out', title: 'Your pass',   signedIn: true },
-  { id: 'opps',        label: '12 · My opportunities',   title: 'My opportunities', signedIn: true },
+  { id: 'home',        label: '1 · Website home',        noBack: true, site: true },
+  { id: 'list',        label: '2 · Drives list' },
+  { id: 'drive',       label: '3 · Drive detail' },
+  { id: 'signin',      label: '4 · Sign in' },
+  { id: 'waitlist',    label: '4a · Not eligible' },
+  { id: 'waitlisted',  label: "4b · Waitlisted" },
+  { id: 'resume',      label: '5 · Resume',              signedIn: true },
+  { id: 'pick',        label: '6 · Pick companies',      signedIn: true },
+  { id: 'review',      label: '7 · Under review',        signedIn: true },
+  { id: 'shortlisted', label: '8 · Shortlisted',         signedIn: true },
+  { id: 'pay',         label: '8a · Payment success',    signedIn: true },
+  { id: 'confirmed',   label: '9 · Confirmed pass',      signedIn: true },
+  { id: 'notselected', label: '10 · Not selected',       signedIn: true },
+  { id: 'cancelled',   label: '11 · Company cancelled',  signedIn: true },
+  { id: 'copulled',    label: '11a · One company pulled out', signedIn: true },
+  { id: 'opps',        label: '12 · My opportunities',   signedIn: true },
 ]
 
 export default function MobileApp() {
@@ -123,7 +123,7 @@ export default function MobileApp() {
                 <ChevronLeft sw={2.4} />
               </button>
             )}
-            <div className="flex-1 text-[15px] font-bold tracking-[-.015em]">{meta.title}</div>
+            <div className="flex-1" />
             {meta.signedIn && (
               <div className="w-[34px] h-[34px] rounded-full grid place-items-center bg-brand-tint text-brand text-[12.5px] font-extrabold flex-none">
                 {LEARNER.initials}
@@ -138,6 +138,8 @@ export default function MobileApp() {
 
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[134px] h-[5px] rounded-full bg-ink/20 z-40 pointer-events-none" />
 
+        <Toast message={p.toast} />
+
         <Sheet
           data={sheet}
           onClose={closeSheet}
@@ -146,7 +148,7 @@ export default function MobileApp() {
           onInterest={() => { closeSheet(); p.go('signin') }}
         />
 
-        <PayFlow open={paying} onDone={() => { setPaying(false); p.go('confirmed') }} />
+        <PayFlow open={paying} onDone={() => { setPaying(false); p.notify('Payment successful'); p.go('confirmed') }} />
       </div>
     </div>
   )

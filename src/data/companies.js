@@ -1,8 +1,14 @@
+import zetaLogo from '../assets/logos/zeta.png'
+import razorpayLogo from '../assets/logos/razorpay.png'
+import growwLogo from '../assets/logos/groww.png'
+import innovaccerLogo from '../assets/logos/innovaccer.png'
+
 // One source of truth for company content, shared by both prototypes.
 export const COMPANIES = {
   zeta: {
     key: 'zeta',
     name: 'Zeta',
+    logo: zetaLogo,
     role: 'Backend engineer',
     ctc: '₹12–18 LPA',
     seats: '5',
@@ -19,6 +25,7 @@ export const COMPANIES = {
   razorpay: {
     key: 'razorpay',
     name: 'Razorpay',
+    logo: razorpayLogo,
     role: 'SDE-1',
     ctc: '₹14–20 LPA',
     seats: '3',
@@ -35,6 +42,7 @@ export const COMPANIES = {
   groww: {
     key: 'groww',
     name: 'Groww',
+    logo: growwLogo,
     role: 'Frontend engineer',
     ctc: '₹10–15 LPA',
     seats: '4',
@@ -51,6 +59,7 @@ export const COMPANIES = {
   innovaccer: {
     key: 'innovaccer',
     name: 'Innovaccer',
+    logo: innovaccerLogo,
     role: 'Data analyst',
     ctc: '₹8–12 LPA',
     seats: '6',

@@ -1,11 +1,18 @@
-import { Btn, Card, Logo, Pill } from '../../components/ui.jsx'
-import { Check } from '../../components/Icons.jsx'
+import { Btn, Card, Logo, Pill, cx } from '../../components/ui.jsx'
+import { Check, Alert, Calendar, Clock, Pin } from '../../components/Icons.jsx'
 import { COMPANIES, DRIVE } from '../../data/companies.js'
 
-function RefundLine({ children }) {
+const driveMeta = [
+  [Calendar, DRIVE.date],
+  [Clock, DRIVE.time],
+  [Pin, 'Masai campus'],
+]
+
+function RefundLine({ tone = 'good', children }) {
+  const Icon = tone === 'good' ? Check : Alert
   return (
     <div className="flex gap-2.5 py-[7px] text-[13px] text-ink-2">
-      <span className="text-good flex-none mt-px"><Check size={17} sw={2.4} /></span>
+      <span className={cx('flex-none mt-px', tone === 'good' ? 'text-good' : 'text-warn')}><Icon size={17} sw={2.4} /></span>
       <span>{children}</span>
     </div>
   )
@@ -13,12 +20,22 @@ function RefundLine({ children }) {
 
 export default function Shortlisted({ nav }) {
   return (
-    <div className="relative min-h-full">
-      <div className="px-5 pt-2 pb-28 space-y-6">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 px-5 pt-2 pb-28 space-y-6">
         <div>
           <Pill tone="good" dot>Zeta shortlisted you</Pill>
-          <h1 className="d1 mt-3.5">You're in for the Bengaluru drive</h1>
-          <p className="b1 mt-2.5">{DRIVE.date}, {DRIVE.time} · Masai campus</p>
+          <h1 className="d1 tracking-[-.01em] mt-3.5">You're in for the Bengaluru drive</h1>
+          <div className="flex items-center flex-wrap gap-3 mt-3">
+            {driveMeta.map(([Icon, label], i) => (
+              <span key={i} className="flex items-center gap-3">
+                {i > 0 && <span className="w-px h-3.5 bg-line-2" aria-hidden />}
+                <span className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink-2">
+                  <Icon size={14} sw={2.2} className="text-ink-3" />
+                  {label}
+                </span>
+              </span>
+            ))}
+          </div>
         </div>
 
         <Card flush>
@@ -35,12 +52,13 @@ export default function Shortlisted({ nav }) {
         </Card>
 
         <div className="rounded-lg p-[22px] bg-[linear-gradient(165deg,#FFFFFF,#F7F7FC)] border border-line shadow-s2">
-          <div className="cap">Refundable seat deposit</div>
+          <div className="cap">Fully refundable deposit</div>
           <div className="text-[44px] font-extrabold tracking-[-.045em] leading-none tabular-nums mt-1.5">₹999</div>
-          <div className="t3 mt-1.5 text-ink-2">Blocks your seat for the whole day — not charged per company</div>
+          <div className="t3 mt-1.5 text-ink-2">Holds your seat for all interviews on drive day</div>
           <div className="h-px bg-line my-4" />
-          <RefundLine>Attend the drive — your ₹999 is refunded automatically once it ends</RefundLine>
-          <RefundLine>No extra charge for more shortlists that day</RefundLine>
+          <RefundLine>Attend the drive and get a full ₹999 refund within 24–48 hours.</RefundLine>
+          <RefundLine tone="warn">Amount is non-refundable if you do not attend.</RefundLine>
+          <RefundLine>Covers unlimited company shortlists with no extra fee.</RefundLine>
         </div>
       </div>
 

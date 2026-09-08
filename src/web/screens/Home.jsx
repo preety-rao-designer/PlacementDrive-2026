@@ -44,7 +44,7 @@ export default function Home({ nav }) {
             onClick={() => nav.go('signin')}
             className="ml-auto lg:ml-0 bg-masai-red text-white rounded-full px-6 py-3 text-[14.5px] font-extrabold tracking-[-.02em] whitespace-nowrap"
           >
-            Login / Sign up
+            Login / Sign Up
           </button>
         </div>
 
@@ -82,9 +82,9 @@ export default function Home({ nav }) {
           </div>
           <button
             onClick={() => nav.go('list')}
-            className="relative bg-white text-masai-black rounded-full px-[30px] py-[17px] text-[15px] font-extrabold tracking-[-.018em] inline-flex items-center gap-2.5 whitespace-nowrap justify-self-start"
+            className="relative bg-masai-red text-white rounded-full px-[30px] py-[17px] text-[15px] font-extrabold tracking-[-.018em] inline-flex items-center gap-2.5 whitespace-nowrap justify-self-start"
           >
-            See upcoming drives <ArrowRight size={17} sw={2.8} />
+            See Upcoming Drives <ArrowRight size={17} sw={2.8} />
           </button>
         </div>
 

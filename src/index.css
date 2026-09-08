@@ -7,34 +7,36 @@
    Tailwind maps each of these in tailwind.config.js.
    ------------------------------------------------------------------ */
 :root {
-  --ink: #0B0B12;
-  --ink-2: #575767;
-  --ink-3: #8B8B9C;
+  /* rgb triplets (no #, space-separated) so Tailwind can apply opacity
+     modifiers like bg-ink/50 — see tailwind.config.js */
+  --ink: 11 11 18;
+  --ink-2: 87 87 103;
+  --ink-3: 139 139 156;
 
-  --line: #EAEAF0;
-  --line-2: #DCDCE6;
+  --line: 234 234 240;
+  --line-2: 220 220 230;
 
-  --surface: #FFFFFF;
-  --surface-2: #F6F6FA;
-  --surface-3: #F0F0F6;
+  --surface: 255 255 255;
+  --surface-2: 246 246 250;
+  --surface-3: 240 240 246;
 
-  --brand: #2E2AE0;
-  --brand-2: #5B4BFF;
-  --brand-tint: #EDECFF;
-  --brand-line: #D6D3FF;
+  --brand: 46 42 224;
+  --brand-2: 91 75 255;
+  --brand-tint: 237 236 255;
+  --brand-line: 214 211 255;
 
-  --good: #0B8A5E;
-  --good-tint: #E2F6EE;
-  --good-line: #BFE7D6;
+  --good: 11 138 94;
+  --good-tint: 226 246 238;
+  --good-line: 191 231 214;
 
-  --warn: #9A6100;
-  --warn-tint: #FFF3DC;
+  --warn: 154 97 0;
+  --warn-tint: 255 243 220;
 
-  --stop: #B02A2A;
-  --stop-tint: #FDECEC;
+  --stop: 176 42 42;
+  --stop-tint: 253 236 236;
 
-  --masai-red: #E23C3C;
-  --masai-black: #08080A;
+  --masai-red: 226 60 60;
+  --masai-black: 8 8 10;
 }
 
 @layer base {

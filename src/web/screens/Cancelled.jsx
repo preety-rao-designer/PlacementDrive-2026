@@ -12,7 +12,7 @@ function Timeline({ items }) {
           <span
             className={
               'absolute -left-6 top-[13px] w-2.5 h-2.5 rounded-full ring-[3px] ring-white ' +
-              (state === 'done' ? 'bg-good' : state === 'now' ? 'bg-brand shadow-[0_0_0_6px_var(--brand-tint)]' : 'bg-line-2')
+              (state === 'done' ? 'bg-good' : state === 'now' ? 'bg-brand shadow-[0_0_0_6px_rgb(var(--brand-tint))]' : 'bg-line-2')
             }
           />
           <b className="block text-ink font-bold text-[14.5px] mb-0.5">{title}</b>
@@ -26,20 +26,20 @@ function Timeline({ items }) {
 export default function Cancelled({ nav }) {
   return (
     <Shell>
-      <Split>
+      <Notice tone="stop" title="Zeta has cancelled" icon={<Alert size={21} />}>
+        They've pulled out of the 24 Aug drive.
+      </Notice>
+
+      <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-7">
+        Your ₹999 is on its way back
+      </h1>
+      <p className="text-[15px] text-ink-2 mt-3">
+        Zeta was your only shortlist here, so there's nothing left to attend. Refunded automatically.
+      </p>
+
+      <Split className="mt-7">
         <div>
-          <Notice tone="stop" title="Zeta has cancelled" icon={<Alert size={21} />}>
-            They've pulled out of the 24 Aug drive.
-          </Notice>
-
-          <h1 className="text-[32px] lg:text-[44px] font-extrabold tracking-[-.04em] leading-[1.08] mt-7">
-            Your ₹999 is on its way back
-          </h1>
-          <p className="text-[15px] text-ink-2 mt-3">
-            Zeta was your only shortlist here, so there's nothing left to attend. Refunded automatically.
-          </p>
-
-          <Card flush className="mt-7">
+          <Card flush>
             <div className="flex items-center gap-4 px-6 py-5">
               <Logo company="zeta" dim />
               <div className="flex-1 min-w-0">
@@ -62,7 +62,7 @@ export default function Cancelled({ nav }) {
               </div>
               <div className="px-6 py-4 bg-surface-2 border-t border-line flex items-center justify-between gap-3.5">
                 <span className="cap">Application is open</span>
-                <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View drive</Btn>
+                <Btn size="sm" onClick={() => nav.go('drive')} className="flex-none">View Drive</Btn>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Marks, Check, Pin, Bag, Rupee, People } from './Icons.jsx'
+import { Marks, Check, Pin, Bag, Rupee, People, Clock } from './Icons.jsx'
 import { COMPANIES } from '../data/companies.js'
 
 const cx = (...a) => a.filter(Boolean).join(' ')
@@ -65,12 +65,19 @@ export function Logo({ company, size = 'md', dim, className }) {
   const c = typeof company === 'string' ? COMPANIES[company] : company
   const Mark = c && Marks[c.key]
   const sizes = { sm: 'w-[30px] h-[30px] rounded-[9px]', md: 'w-11 h-11 rounded-[13px]', lg: 'w-[60px] h-[60px] rounded-[18px]' }
+  const padding = { sm: 'p-[6px]', md: 'p-[9px]', lg: 'p-3' }
   return (
     <div
-      className={cx('grid place-items-center flex-none bg-gradient-to-br', sizes[size], c?.gradient, dim && 'saturate-[.25]', className)}
+      className={cx(
+        'grid place-items-center flex-none',
+        sizes[size],
+        c?.logo ? cx('bg-white border border-black/10', padding[size]) : cx('bg-gradient-to-br', c?.gradient),
+        dim && 'saturate-[.25] opacity-70',
+        className
+      )}
       aria-label={c?.name}
     >
-      {Mark && <Mark />}
+      {c?.logo ? <img src={c.logo} alt="" className="w-full h-full object-contain" /> : Mark && <Mark />}
     </div>
   )
 }
@@ -86,9 +93,9 @@ export function Kv({ k, v }) {
 }
 
 /* ---------------- Meta chips ---------------- */
-const chipIcons = { ctc: Rupee, loc: Pin, seats: People, mode: Bag }
+const chipIcons = { ctc: Rupee, loc: Pin, seats: People, mode: Bag, exp: Clock }
 export function MetaChips({ company, only }) {
-  const items = (only || ['ctc', 'loc', 'seats', 'mode']).map((k) => ({
+  const items = (only || ['ctc', 'loc', 'seats', 'exp']).map((k) => ({
     k,
     Icon: chipIcons[k],
     label: k === 'seats' ? company.openings : company[k],
@@ -207,9 +214,28 @@ export const Select = ({ children, ...p }) => (
   </select>
 )
 
+/* ---------------- Toast / snackbar ---------------- */
+/** `fixed` covers the viewport (web); otherwise it fills its positioned parent (phone frame). */
+export function Toast({ message, fixed }) {
+  if (!message) return null
+  return (
+    <div
+      className={cx(
+        'inset-x-0 z-[60] flex justify-center px-5 pointer-events-none',
+        fixed ? 'fixed top-10' : 'absolute top-10'
+      )}
+    >
+      <div className="flex items-center gap-2.5 bg-ink text-white text-[13.5px] font-semibold tracking-[-.01em] px-4 py-3 rounded-full shadow-s3 animate-fade">
+        <Check size={16} sw={2.6} className="text-good flex-none" />
+        {message}
+      </div>
+    </div>
+  )
+}
+
 /* ---------------- Skeleton ---------------- */
 export const Skel = ({ className }) => (
-  <div className={cx('h-3 rounded-md bg-[linear-gradient(90deg,var(--surface-2),var(--surface-3),var(--surface-2))] bg-[length:200%_100%] animate-shimmer', className)} />
+  <div className={cx('h-3 rounded-md bg-[linear-gradient(90deg,rgb(var(--surface-2)),rgb(var(--surface-3)),rgb(var(--surface-2)))] bg-[length:200%_100%] animate-shimmer', className)} />
 )
 
 export { cx }

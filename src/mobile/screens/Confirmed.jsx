@@ -53,8 +53,8 @@ export default function Confirmed({ nav }) {
     : 'Zeta'
 
   return (
-    <div className="relative min-h-full">
-      <div className="pt-2 pb-32">
+    <div className="relative min-h-full flex flex-col">
+      <div className="flex-1 pt-2 pb-32">
         <div className="text-center mb-[18px] px-5">
           <h1 className="d2">Seat confirmed</h1>
           <p className="b1 mt-2">Show this at the entry gate</p>
@@ -66,7 +66,7 @@ export default function Confirmed({ nav }) {
 
         <div className="px-5 mt-5 space-y-4">
           <div className="flex gap-2.5">
-            <Btn variant="sec" size="sm" className="flex-1">Add to calendar</Btn>
+            <Btn variant="sec" size="sm" className="flex-1">Add To Calendar</Btn>
             <Btn variant="sec" size="sm" className="flex-1">Directions</Btn>
           </div>
 
@@ -83,8 +83,8 @@ export default function Confirmed({ nav }) {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 px-5 pt-3.5 pb-6 bg-gradient-to-b from-transparent to-surface to-[24%] space-y-2.5">
-        <Btn variant="sec" block onClick={() => nav.go('opps')}>View my opportunities</Btn>
-        <Btn variant="ghost" block onClick={() => nav.go('list')}>Back to drives</Btn>
+        <Btn variant="sec" block onClick={() => nav.go('opps')}>View My Opportunities</Btn>
+        <Btn variant="ghost" block onClick={() => nav.go('list')}>Back To Drives</Btn>
       </div>
     </div>
   )

@@ -47,10 +47,10 @@ export function Sheet({ data, onClose, picked, onToggle, onInterest }) {
             <div className="px-5 pt-3.5 pb-[26px] border-t border-line flex-none bg-surface">
               {inPick ? (
                 <Btn block variant={selected ? 'sec' : 'pri'} onClick={() => onToggle(company.key)}>
-                  {selected ? 'Remove from selection' : 'Add to my selection'}
+                  {selected ? 'Remove From Selection' : 'Add To My Selection'}
                 </Btn>
               ) : (
-                <Btn block onClick={onInterest}>Apply now</Btn>
+                <Btn block onClick={onInterest}>Apply Now</Btn>
               )}
             </div>
           </>

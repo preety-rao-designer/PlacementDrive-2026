@@ -14,7 +14,7 @@ function OppCard({ company, status, tone, room }) {
           </div>
           <Pill tone={tone}>{status}</Pill>
         </div>
-        <MetaChips company={COMPANIES[company]} only={['mode', 'ctc', 'loc']} />
+        <MetaChips company={COMPANIES[company]} only={['exp', 'ctc', 'loc']} />
       </div>
       <div className={cx(
         'px-4 py-2.5 border-t border-line text-[12.5px] font-semibold flex items-center gap-2',
@@ -30,6 +30,7 @@ function OppCard({ company, status, tone, room }) {
 export default function Opportunities() {
   return (
     <div className="px-5 pt-1.5 pb-8 space-y-4">
+      <h1 className="d2">My opportunities</h1>
       <div className="rounded-md px-4 py-3.5 bg-[linear-gradient(150deg,#5B4BFF,#2E2AE0)] text-white flex items-center gap-3">
         <span className="w-2 h-2 rounded-full bg-[#6EE7B7] flex-none shadow-[0_0_0_4px_rgba(110,231,183,.25)] animate-blink" />
         <div className="flex-1">

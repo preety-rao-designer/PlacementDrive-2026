@@ -29,7 +29,7 @@ export default function UnderReview({ nav }) {
         })}
       </Card>
 
-      <Btn variant="sec" block onClick={() => nav.go('pick')}>Add more companies</Btn>
+      <Btn variant="sec" block onClick={() => nav.go('pick')}>Add More Companies</Btn>
 
       <Card tint>
         <div className="t3 mb-1">What happens next</div>
